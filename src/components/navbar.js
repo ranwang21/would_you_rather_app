@@ -8,7 +8,7 @@ export default function Navbar () {
     return (
         <div>
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-                <Link className='navbar-brand' to='/home'>{TEXT.TITLE}</Link>
+                <Link className='navbar-brand' to='/'>{TEXT.TITLE}</Link>
                 <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                     <span className='navbar-toggler-icon' />
                 </button>
@@ -24,6 +24,11 @@ export default function Navbar () {
                             <Link className='nav-link' to='/leader-board'>{TEXT.LEADER_BOARD}</Link>
                         </li>
                     </ul>
+                </div>
+
+                <div className='nav navbar-nav navbar-right'>
+                    <div className='nav-link'>welcome, Ran</div>
+                    <Link className='nav-link' to='/logout'>{TEXT.LOG_OUT}</Link>
                 </div>
             </nav>
         </div>

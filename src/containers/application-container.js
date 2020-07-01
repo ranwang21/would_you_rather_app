@@ -11,7 +11,6 @@ export default class ApplicationContainer extends Component {
         return (
             <div>
                 <Navbar />
-
             </div>
         )
     }
