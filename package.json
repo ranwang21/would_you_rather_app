@@ -8,7 +8,7 @@
         "lint": "eslint src/**/*.js",
         "build": "webpack --mode development",
         "dev": "webpack-dev-server --open --mode development",
-        "start": "nodemon server.js"
+        "start": "webpack-dev-server --open --mode development"
     },
     "keywords": [],
     "author": "",
@@ -17,9 +17,12 @@
         "axios": "^0.18.1",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
+        "react-icons": "^3.10.0",
         "react-redux": "^7.2.0",
+        "react-redux-loading": "^4.6.1",
         "react-router-dom": "^5.2.0",
-        "redux": "^4.0.5"
+        "redux": "^4.0.5",
+        "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.9.6",
