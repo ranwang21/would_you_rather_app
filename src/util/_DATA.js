@@ -1,66 +1,66 @@
-const users = {
+let users = {
     Ran_wang: {
-        id: 1,
+        id: 'ranwang',
         name: 'Ran Wang',
         avatarURL: 'https://picsum.photos/id/238/200',
-        questions: [1, 2, 3]
+        questions: ['heg7xm5afp9s50dh0q2xk', 'heg7xm5afp9s50dh0q2xk', 'ut4jm78n5m9ctqysdukqs']
     },
     Alex_Dutreil: {
-        id: 2,
+        id: 'alexdutreil',
         name: 'Alex Dutreil',
         avatarURL: 'https://picsum.photos/id/239/200',
-        questions: [4, 5]
+        questions: ['4ga6kisvqh94gm4sn1bsef', 'nsekzd059pk3hvqm1qu5el']
     },
     Shen_yi: {
-        id: 3,
+        id: 'shenyi',
         name: 'Shen Yi',
         avatarURL: 'https://picsum.photos/id/240/200',
-        questions: [6, 7, 8]
+        questions: ['tiy0f0wbp0lffh7eib7onq', 'pyo665rh1yjnyydovqp6fj', 'csuijhk0ov8gphfcrherl']
     }
 }
 
-const questions = {
-    1: {
-        id: 1,
+let questions = {
+    'bqbr9udjh7li0t45bbl67c': {
+        id: 'bqbr9udjh7li0t45bbl67c',
         AnswerA: {
             text: 'Buy a condo',
-            userSelected: [1, 2]
+            userSelected: ['ranwang', 'alexdutreil']
         },
         AnswerB: {
             text: 'Buy a house',
-            userSelected: [3]
+            userSelected: ['shenyi']
         },
         createdAt: 1593975393509,
-        Author: 1
+        Author: 'ranwang'
     },
-    2: {
-        id: 2,
+    'heg7xm5afp9s50dh0q2xk': {
+        id: 'heg7xm5afp9s50dh0q2xk',
         AnswerA: {
             text: 'Be a FrontEnd Developer',
-            userSelected: [1]
+            userSelected: ['ranwang']
         },
         AnswerB: {
             text: 'Be a Backend Developer',
-            userSelected: [2, 3]
+            userSelected: ['alexdutreil', 'shenyi']
         },
         createdAt: 1593975420228,
         Author: 1
     },
-    3: {
-        id: 3,
+    'ut4jm78n5m9ctqysdukqs': {
+        id: 'ut4jm78n5m9ctqysdukqs',
         AnswerA: {
             text: 'Keep a cat',
-            userSelected: [1, 2]
+            userSelected: ['ranwang', 'alexdutreil']
         },
         AnswerB: {
             text: 'Keep a dog',
-            userSelected: [3]
+            userSelected: ['shenyi']
         },
         createdAt: 1593976376963,
-        Author: 1
+        Author: 'ranwang'
     },
-    4: {
-        id: 4,
+    '4ga6kisvqh94gm4sn1bsef': {
+        id: '4ga6kisvqh94gm4sn1bsef',
         AnswerA: {
             text: 'Eat meat',
             userSelected: []
@@ -70,10 +70,10 @@ const questions = {
             userSelected: []
         },
         createdAt: 1593976490796,
-        Author: 2
+        Author: 'alexdutreil'
     },
-    5: {
-        id: 5,
+    'nsekzd059pk3hvqm1qu5el': {
+        id: 'nsekzd059pk3hvqm1qu5el',
         AnswerA: {
             text: 'Play game in laptop',
             userSelected: []
@@ -83,45 +83,61 @@ const questions = {
             userSelected: []
         },
         createdAt: 1593976549039,
-        Author: 2
+        Author: 'alexdutreil'
     },
-    6: {
-        id: 6,
+    'tiy0f0wbp0lffh7eib7onq': {
+        id: 'tiy0f0wbp0lffh7eib7onq',
         AnswerA: {
             text: 'Play FTP games',
-            userSelected: [2, 3]
+            userSelected: ['alexdutreil', 'shenyi']
         },
         AnswerB: {
             text: 'Play RPG games',
-            userSelected: [1]
+            userSelected: ['ranwang']
         },
         createdAt: 1593976490796,
-        Author: 3
+        Author: 'shenyi'
     },
-    7: {
-        id: 7,
+    'pyo665rh1yjnyydovqp6fj': {
+        id: 'pyo665rh1yjnyydovqp6fj',
         AnswerA: {
             text: 'Play classic WOW',
-            userSelected: [2]
+            userSelected: ['alexdutreil']
         },
         AnswerB: {
             text: 'Play retail WOW',
             userSelected: []
         },
         createdAt: 1593976722975,
-        Author: 3
+        Author: 'shenyi'
     },
-    8: {
-        id: 8,
+    'csuijhk0ov8gphfcrherl': {
+        id: 'csuijhk0ov8gphfcrherl',
         AnswerA: {
             text: 'Work remotely',
             userSelected: []
         },
         AnswerB: {
             text: 'Work at office',
-            userSelected: [3, 1]
+            userSelected: ['ranwang', 'shenyi']
         },
         createdAt: 1593976786548,
-        Author: 3
+        Author: 'shenyi'
     }
 }
+
+export function _getQuestions(){
+    return new Promise((res, rej) => {
+        setTimeout(() => res({...users}), 500);
+    })
+}
+
+export function _getQuestions(){
+    return new Promise((res, rej) => {
+        setTimeout(() => res({...questions}), 500);
+    })
+}
+
+function generateUID () {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+  }

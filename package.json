@@ -30,6 +30,7 @@
         "@babel/preset-react": "^7.9.4",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.1.0",
+        "babel-preset-stage-0": "^6.24.1",
         "css-loader": "^3.5.3",
         "disconnect": "^1.2.1",
         "eslint": "^5.16.0",
