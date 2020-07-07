@@ -126,7 +126,27 @@ let questions = {
     }
 }
 
-export function _getQuestions(){
+function formatQuestion(textA, textB, authedUser){
+    return {
+        id: generateUID(),
+        AnswerA: {
+            text: textA,
+            userSelected: []
+        },
+        AnswerB: {
+            text: textB,
+            userSelected: []
+        },
+        createdAt: Date.now(),
+        Author: authedUser.id
+    }
+}
+
+function saveAnswer(questionId, option, authedUser){
+
+}
+
+export function _getUsers(){
     return new Promise((res, rej) => {
         setTimeout(() => res({...users}), 500);
     })
@@ -140,4 +160,15 @@ export function _getQuestions(){
 
 function generateUID () {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-  }
+}
+
+export function saveQuestion(answerA, answerB, authedUser){
+    setTimeout(() => {
+        users = {
+            ...users,
+            {
+                formatQuestion(answerA, answerB, authedUser)
+            }
+        }
+    }, 500);
+}
