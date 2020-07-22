@@ -163,10 +163,12 @@ function generateUID () {
 }
 
 export function saveQuestion(answerA, answerB, authedUser){
+    const id = generateUID()
+
     setTimeout(() => {
-        users = {
-            ...users,
-            {
+        questions = {
+            ...questions,
+            id:{
                 formatQuestion(answerA, answerB, authedUser)
             }
         }
