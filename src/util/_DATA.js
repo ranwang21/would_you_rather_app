@@ -147,14 +147,14 @@ function saveAnswer (questionId, option, authedUser) {
 }
 
 export function _getUsers () {
-    return new Promise((res, rej) => {
-        setTimeout(() => res({ ...users }), 200)
+    return new Promise((resolve) => {
+        setTimeout(() => resolve({ ...users }), 200)
     })
 }
 
 export function _getQuestions () {
-    return new Promise((res, rej) => {
-        setTimeout(() => res({ ...questions }), 200)
+    return new Promise((resolve) => {
+        setTimeout(() => resolve({ ...questions }), 200)
     })
 }
 
@@ -168,7 +168,7 @@ export function saveQuestion (answerA, answerB, authedUser) {
     setTimeout(() => {
         questions = {
             ...questions,
-            id: formatQuestion(answerA, answerB, authedUser)
+            [id]: formatQuestion(answerA, answerB, authedUser)
         }
     }, 500)
 }
