@@ -1,4 +1,4 @@
-let users = {
+const users = {
     Ran_wang: {
         id: 'ranwang',
         name: 'Ran Wang',
@@ -20,7 +20,7 @@ let users = {
 }
 
 let questions = {
-    'bqbr9udjh7li0t45bbl67c': {
+    bqbr9udjh7li0t45bbl67c: {
         id: 'bqbr9udjh7li0t45bbl67c',
         AnswerA: {
             text: 'Buy a condo',
@@ -33,7 +33,7 @@ let questions = {
         createdAt: 1593975393509,
         Author: 'ranwang'
     },
-    'heg7xm5afp9s50dh0q2xk': {
+    heg7xm5afp9s50dh0q2xk: {
         id: 'heg7xm5afp9s50dh0q2xk',
         AnswerA: {
             text: 'Be a FrontEnd Developer',
@@ -46,7 +46,7 @@ let questions = {
         createdAt: 1593975420228,
         Author: 1
     },
-    'ut4jm78n5m9ctqysdukqs': {
+    ut4jm78n5m9ctqysdukqs: {
         id: 'ut4jm78n5m9ctqysdukqs',
         AnswerA: {
             text: 'Keep a cat',
@@ -72,7 +72,7 @@ let questions = {
         createdAt: 1593976490796,
         Author: 'alexdutreil'
     },
-    'nsekzd059pk3hvqm1qu5el': {
+    nsekzd059pk3hvqm1qu5el: {
         id: 'nsekzd059pk3hvqm1qu5el',
         AnswerA: {
             text: 'Play game in laptop',
@@ -85,7 +85,7 @@ let questions = {
         createdAt: 1593976549039,
         Author: 'alexdutreil'
     },
-    'tiy0f0wbp0lffh7eib7onq': {
+    tiy0f0wbp0lffh7eib7onq: {
         id: 'tiy0f0wbp0lffh7eib7onq',
         AnswerA: {
             text: 'Play FTP games',
@@ -98,7 +98,7 @@ let questions = {
         createdAt: 1593976490796,
         Author: 'shenyi'
     },
-    'pyo665rh1yjnyydovqp6fj': {
+    pyo665rh1yjnyydovqp6fj: {
         id: 'pyo665rh1yjnyydovqp6fj',
         AnswerA: {
             text: 'Play classic WOW',
@@ -111,7 +111,7 @@ let questions = {
         createdAt: 1593976722975,
         Author: 'shenyi'
     },
-    'csuijhk0ov8gphfcrherl': {
+    csuijhk0ov8gphfcrherl: {
         id: 'csuijhk0ov8gphfcrherl',
         AnswerA: {
             text: 'Work remotely',
@@ -126,7 +126,7 @@ let questions = {
     }
 }
 
-function formatQuestion(textA, textB, authedUser){
+function formatQuestion (textA, textB, authedUser) {
     return {
         id: generateUID(),
         AnswerA: {
@@ -142,19 +142,19 @@ function formatQuestion(textA, textB, authedUser){
     }
 }
 
-function saveAnswer(questionId, option, authedUser){
+function saveAnswer (questionId, option, authedUser) {
 
 }
 
-export function _getUsers(){
+export function _getUsers () {
     return new Promise((res, rej) => {
-        setTimeout(() => res({...users}), 500);
+        setTimeout(() => res({ ...users }), 200)
     })
 }
 
-export function _getQuestions(){
+export function _getQuestions () {
     return new Promise((res, rej) => {
-        setTimeout(() => res({...questions}), 500);
+        setTimeout(() => res({ ...questions }), 200)
     })
 }
 
@@ -162,15 +162,13 @@ function generateUID () {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
-export function saveQuestion(answerA, answerB, authedUser){
+export function saveQuestion (answerA, answerB, authedUser) {
     const id = generateUID()
 
     setTimeout(() => {
         questions = {
             ...questions,
-            id:{
-                formatQuestion(answerA, answerB, authedUser)
-            }
+            id: formatQuestion(answerA, answerB, authedUser)
         }
-    }, 500);
+    }, 500)
 }
